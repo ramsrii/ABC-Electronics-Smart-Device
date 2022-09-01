@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.capgemini.Entites.Client;
 
-public interface ClientRepository extends JpaRepository<Client,String>{
-
+public interface IClientRepository extends JpaRepository<Client,String>
+{
+	
 }
