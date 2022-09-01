@@ -8,7 +8,7 @@ public class AbcElectronicsSmartServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AbcElectronicsSmartServiceApplication.class, args);
-		System.out.println("checking..");
+		System.out.println("checking.. one ");
 	}
 
 }
