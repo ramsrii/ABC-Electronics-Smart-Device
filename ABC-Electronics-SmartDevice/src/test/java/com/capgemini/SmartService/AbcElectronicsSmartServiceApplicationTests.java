@@ -1,10 +1,10 @@
-package com.capgemini.SmartDevice;
+package com.capgemini.SmartService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AbcElectronicsSmartDeviceApplicationTests {
+class AbcElectronicsSmartServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
