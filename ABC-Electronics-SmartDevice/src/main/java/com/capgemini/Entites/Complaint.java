@@ -1,12 +1,19 @@
 package com.capgemini.Entites;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+@Entity
 public class Complaint {
+	@Id
+	@GeneratedValue
 	 int complaintId;
 	 String productModelNumber;
 	 String ComplaintName;
 	 String status,clientId;
 	 int engineerId;
 	public Complaint() {
+		
 		super();
 		// TODO Auto-generated constructor stub
 	}

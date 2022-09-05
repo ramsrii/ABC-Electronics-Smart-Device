@@ -1,28 +1,34 @@
 package com.capgemini.Entites;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Product {
-	String modelNumber;
-	String productName;
-	String productCategoryName;
-	LocalDate dateofPurchase;
-	int warrantyYears;
-	LocalDate warrantyDate;
-	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
+@Id
+@GeneratedValue
+	private String modelNumber;
+	private String productName;
+	private String productCategoryName; // washing machine , TV,AC,SmartPhone
+	private LocalDate dateofPurchase;
+	private int warrentyYears;
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Complaint> complaints=new ArrayList<Complaint>();
+	
+	public List<Complaint> getComplaints() {
+		return complaints;
 	}
-	public Product(String modelNumber, String productName, String productCategoryName, LocalDate dateofPurchase,
-			int warrantyYears, LocalDate warrantyDate) {
-		super();
-		this.modelNumber = modelNumber;
-		this.productName = productName;
-		this.productCategoryName = productCategoryName;
-		this.dateofPurchase = dateofPurchase;
-		this.warrantyYears = warrantyYears;
-		this.warrantyDate = warrantyDate;
+	public void setComplaints(Complaint complaints) {
+		this.complaints.add(complaints) ;
 	}
+	private LocalDate warrantyDate;
 	public String getModelNumber() {
 		return modelNumber;
 	}
@@ -47,11 +53,11 @@ public class Product {
 	public void setDateofPurchase(LocalDate dateofPurchase) {
 		this.dateofPurchase = dateofPurchase;
 	}
-	public int getWarrantyYears() {
-		return warrantyYears;
+	public int getWarrentyYears() {
+		return warrentyYears;
 	}
-	public void setWarrantyYears(int warrantyYears) {
-		this.warrantyYears = warrantyYears;
+	public void setWarrentyYears(int warrentyYears) {
+		this.warrentyYears = warrentyYears;
 	}
 	public LocalDate getWarrantyDate() {
 		return warrantyDate;
@@ -62,8 +68,8 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [modelNumber=" + modelNumber + ", productName=" + productName + ", productCategoryName="
-				+ productCategoryName + ", dateofPurchase=" + dateofPurchase + ", warrantyYears=" + warrantyYears
-				+ ", warrantyDate=" + warrantyDate + "]";
+				+ productCategoryName + ", dateofPurchase=" + dateofPurchase + ", warrentyYears=" + warrentyYears
+				+ ", complaints=" + complaints + ", warrantyDate=" + warrantyDate + "]";
 	}
 	
 	

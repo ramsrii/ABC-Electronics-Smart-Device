@@ -1,10 +1,26 @@
 package com.capgemini.Entites;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="Emp")
 public class Admin {
+	
+	@Id
+	@GeneratedValue
 	 int adminId;
 	 String password;
 	 long contactNumber;
 	 String emailId;
+	 @OneToMany(cascade=CascadeType.ALL) private List<Complaint> complaint;
 	 
 	public Admin() {
 		super();
